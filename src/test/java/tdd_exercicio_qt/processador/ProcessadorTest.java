@@ -30,6 +30,8 @@ public class ProcessadorTest {
 		processador.processarBoletos(fatura, boletos);
 		
 		assertTrue(fatura.isPago());
+		assertEquals(3, fatura.getQuantidadePagamentos());
+
 	}
 
 	@Test
