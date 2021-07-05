@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import tdd_exercicio_qt.boleto.Boleto;
 import tdd_exercicio_qt.fatura.Fatura;
+import tdd_exercicio_qt.pagamento.Pagamento;
 
 public class ProcessadorTest {
 	
@@ -32,6 +33,7 @@ public class ProcessadorTest {
 		
 		assertTrue(fatura.isPago());
 		assertEquals(3, fatura.getQuantidadePagamentos());
+		assertTrue(fatura.getPagamentos().stream().allMatch(pagamento -> pagamento.getTipoPagamento().equalsIgnoreCase("BOLETO")));
 
 	}
 
@@ -52,6 +54,8 @@ public class ProcessadorTest {
 		
 		assertTrue(fatura.isPago());
 		assertEquals(3, fatura.getQuantidadePagamentos());
+		assertTrue(fatura.getPagamentos().stream().allMatch(pagamento -> pagamento.getTipoPagamento().equalsIgnoreCase("BOLETO")));
+
 	}
 
 	@Test
@@ -69,5 +73,7 @@ public class ProcessadorTest {
 		
 		assertFalse(fatura.isPago());
 		assertEquals(2, fatura.getQuantidadePagamentos());
+		assertTrue(fatura.getPagamentos().stream().allMatch(pagamento -> pagamento.getTipoPagamento().equalsIgnoreCase("BOLETO")));
+
 	}
 }
