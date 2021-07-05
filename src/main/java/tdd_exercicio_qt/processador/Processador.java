@@ -8,7 +8,15 @@ import tdd_exercicio_qt.fatura.Fatura;
 public class Processador {
 
 	public void processarBoletos(Fatura fatura, List<Boleto> boletos) {
-		fatura.setPago(true);
+		Double somaBoletos = 0.0;
+		
+		for (Boleto boleto : boletos) {
+			somaBoletos += boleto.getValorPago();
+		}
+
+		if (somaBoletos >= fatura.getValorTotal()) {
+			fatura.setPago(true);
+		}
 	}
 	
 }
