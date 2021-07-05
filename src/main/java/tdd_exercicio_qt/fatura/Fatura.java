@@ -6,6 +6,7 @@ public class Fatura {
 	private LocalDate data;
 	private Double valorTotal;
 	private String nomeDoCliente;
+	private boolean pago;
 
 	public Fatura(LocalDate data, Double valorTotal, String nomeDoCliente) {
 		this.data = data;
@@ -35,6 +36,18 @@ public class Fatura {
 
 	public void setNomeDoCliente(String nomeDoCliente) {
 		this.nomeDoCliente = nomeDoCliente;
+	}
+
+	public boolean isPago() {
+		return this.pago;
+	}
+
+	public boolean getPago() {
+		return this.pago;
+	}
+
+	public void setPago(boolean pago) {
+		this.pago = pago;
 	}
 
 }
