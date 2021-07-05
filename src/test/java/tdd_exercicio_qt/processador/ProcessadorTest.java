@@ -1,5 +1,6 @@
 package tdd_exercicio_qt.processador;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -50,6 +51,7 @@ public class ProcessadorTest {
 		processador.processarBoletos(fatura, boletos);
 		
 		assertTrue(fatura.isPago());
+		assertEquals(3, fatura.getQuantidadePagamentos());
 	}
 
 	@Test
@@ -66,5 +68,6 @@ public class ProcessadorTest {
 		processador.processarBoletos(fatura, boletos);
 		
 		assertFalse(fatura.isPago());
+		assertEquals(2, fatura.getQuantidadePagamentos());
 	}
 }
